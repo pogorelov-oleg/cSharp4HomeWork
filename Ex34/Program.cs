@@ -1,8 +1,6 @@
-﻿int countMin = GetUserNumber($"Введите минимальное значение в массиве: ", "ОШИБКА! Вы ввели некорректные значения!");
-int countMax = GetUserNumber($"Введите максимальное значение в массиве: ", "ОШИБКА! Вы ввели некорректные значения!");
-int arrLength = GetUserNumber($"Введите длину массива: ", "ОШИБКА! Вы ввели некорректные значения!");
+﻿int arrLength = GetUserNumber($"Введите длину массива: ", "ОШИБКА! Вы ввели некорректные значения!");
 
-int[] arr = GetRandomArray(countMin, countMax, arrLength);
+int[] arr = GetRandomArray(arrLength);
 PrintArray(arr);
 int countEven = GetCountEven(arr);
 Console.WriteLine($"В заданном массиве {countEven} четных элементов");
@@ -12,12 +10,12 @@ void PrintArray(int[] array)
     Console.WriteLine(string.Join(" ", array));
 }
 
-int[] GetRandomArray(int countMin, int countMax, int length)
+int[] GetRandomArray(int length)
 {
     int[] array = new int[length];
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(countMin, countMax + 1);
+        array[i] = new Random().Next(100, 1000);
     }
     return array;
 }
