@@ -25,9 +25,9 @@ int[] GetRandomArray(int countMin, int countMax, int length)
 int GetCountEven(int[] arr)
 {
     int count = 0;
-    for (int i = 0; i < arr.Length; i++)
+    foreach (int el in arr)
     {
-        if (arr[i] % 2 == 0) count += 1;
+        if (el % 2 == 0) count += 1;
     }
     return count;
 }
