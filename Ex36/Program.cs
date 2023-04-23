@@ -25,9 +25,9 @@ int[] GetRandomArray(int countMin, int countMax, int length)
 int GetOddEvenSum(int[] arr)
 {
     int sum = 0;
-    for (int i = 0; i < arr.Length; i++)
+    foreach (int el in arr)
     {
-        if (arr[i] % 2 != 0) sum += arr[i];
+        if (el % 2 != 0) sum += el;
     }
     return sum;
 }
