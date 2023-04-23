@@ -4,8 +4,8 @@ int arrLength = GetUserNumber($"Введите длину массива: ", "О
 
 int[] arr = GetRandomArray(countMin, countMax, arrLength);
 PrintArray(arr);
-int oddEvenSum = GetOddEvenSum(arr);
-Console.WriteLine($"В заданном массиве сумма нечетных чисел равна {oddEvenSum}");
+int oddEvenSum = GetOddEvenIndexSum(arr);
+Console.WriteLine($"В заданном массиве сумма чисел на нечетных позициях равна {oddEvenSum}");
 
 void PrintArray(int[] array)
 {
@@ -22,12 +22,12 @@ int[] GetRandomArray(int countMin, int countMax, int length)
     return array;
 }
 
-int GetOddEvenSum(int[] arr)
+int GetOddEvenIndexSum(int[] arr)
 {
     int sum = 0;
-    foreach (int el in arr)
+    for (int i = 0; i < arr.Length; i++)
     {
-        if (el % 2 != 0) sum += el;
+        if (i % 2 != 0) sum += arr[i];
     }
     return sum;
 }
@@ -44,4 +44,5 @@ int GetUserNumber(string message, string errorMessage)
         else Console.WriteLine(errorMessage);
     }
 }
+
 
