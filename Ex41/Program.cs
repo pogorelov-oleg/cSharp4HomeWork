@@ -1,7 +1,7 @@
 ﻿int arrayLength = GetUserNumber($"Введите длину массива: ", "ОШИБКА! Вы ввели некорректные значения!");
 int[] userArray = GetUserArray(arrayLength);
 PrintArray(userArray);
-int countPositiveNum = GetPositiveNum(userArray);
+int countPositiveNum = GetCountPositiveNum(userArray);
 Console.WriteLine($"Положительных чисел: {countPositiveNum}");
 
 void PrintArray(int[] array)
@@ -32,7 +32,7 @@ int[] GetUserArray(int length)
     return arr;
 }
 
-int GetPositiveNum(int[] array)
+int GetCountPositiveNum(int[] array)
 {
     int countPositiveNum = 0;
     foreach (int el in array)
