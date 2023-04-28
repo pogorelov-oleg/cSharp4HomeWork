@@ -3,10 +3,16 @@ double k1 = GetUserNumber($"Введите значение k1: ", "ОШИБКА
 double b2 = GetUserNumber($"Введите значение b2: ", "ОШИБКА! Вы ввели некорректные значения!");
 double k2 = GetUserNumber($"Введите значение k2: ", "ОШИБКА! Вы ввели некорректные значения!");
 
-double x = GetX(b1, k1, b2, k2);
-double y = GetY(b1, k1, b2, k2);
-
-Console.WriteLine($"b1({b1}), k1({k1}), b2({b2}), k2({k2}) -> ({x}; {y})");
+if (CheckParallelism(k1, k2))
+{
+    Console.WriteLine($"Прямые параллельны");
+}
+else
+{
+    double x = GetX(b1, k1, b2, k2);
+    double y = GetY(b1, k1, b2, k2);
+    Console.WriteLine($"b1({b1}), k1({k1}), b2({b2}), k2({k2}) -> ({x}; {y})");
+}
 
 double GetUserNumber(string message, string errorMessage)
 {
@@ -31,6 +37,12 @@ double GetY(double b1, double k1, double b2, double k2)
 {
     double y = k2 * GetX(b1, k1, b2, k2) + b2;
     return y;
+}
+
+bool CheckParallelism(double k1, double k2)
+{
+    if (k1 == k2) return true;
+    else return false;
 }
 
 //  y = k1 * x + b1,   заданная формула
