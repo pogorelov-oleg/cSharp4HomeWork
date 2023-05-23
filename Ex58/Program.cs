@@ -9,7 +9,7 @@ int[,] arrayB = new int[,]
     {3, 3}
 };
 
-if (CheckUserInput(arrayA, arrayB))
+if (CheckArrays(arrayA, arrayB))
 {
     int[,] arrayAB = GetArrayAB(arrayA, arrayB);
     PrintArray(arrayA);
@@ -49,7 +49,7 @@ int[,] GetArrayAB(int[,] a, int[,] b)
     return ab;
 }
 
-bool CheckUserInput(int[,] arrA, int[,] arrB)
+bool CheckArrays(int[,] arrA, int[,] arrB)
 {
     return arrA.GetLength(1) == arrB.GetLength(0);
 }
