@@ -39,7 +39,6 @@ int[,] GetArrayAB(int[,] a, int[,] b)
     {
         for (int j = 0; j < b.GetLength(1); j++)
         {
-
             for (int k = 0; k < a.GetLength(1); k++)
             {
                 ab[i, j] += a[i, k] * b[k, j];
