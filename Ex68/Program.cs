@@ -1,8 +1,8 @@
 ﻿int m = GetUserNumber("Введите число M: ", "Error");
-int n = GetUserNumber("Введите число N: ", "Error");
+int n = GetUserNumber("Введите число N: ", "Error");\
+
 int res = Akkerman(m, n);
 Console.WriteLine($"A({m}, {n}) = {res}");
-
 
 int GetUserNumber(string message, string errorMessage)
 {
